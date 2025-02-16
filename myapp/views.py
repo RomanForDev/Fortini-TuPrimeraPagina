@@ -11,17 +11,20 @@ def crear_piedra(request):
         formulario= CrearPiedra(request.POST)
         if formulario.is_valid():
             formulario.cleaned_data
-            nueva_piedra= piedra(
-                clase= formulario.cleaned_data.get('clase'),
-                material= formulario.cleaned_data.get('material'),
-                descripcion= formulario.cleaned_data.get('descripcion')
-            )
-            nueva_piedra.save()
-        return render(request, 'inicio/crear_piedra.html', {'formulario': formulario})
+            Piedra= piedra(
+                clase=formulario.cleaned_data.get('clase'),
+                material=formulario.cleaned_data.get('material'),
+                descripcion=formulario.cleaned_data.get('descripcion')
+                )
+            Piedra.save()
+    return render(request, 'crear_piedra.html', {'formulario': formulario})
 
 
 def listar_piedras(request):
     existencias= piedra.objects.all()
-    return render(request, 'inicio/listar_piedras.html', {'existencias': existencias})
+    return render(request, 'listar_piedras.html', {'existencias': existencias})
+
+def contacto(request):
+    return render(request, 'contacto.html')
             
 
