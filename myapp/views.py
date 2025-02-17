@@ -7,6 +7,7 @@ def inicio(request):
     return render(request, 'inicio.html')
 
 def crear_piedra(request):
+    formulario= CrearPiedra()
     if request.method== "POST":
         formulario= CrearPiedra(request.POST)
         if formulario.is_valid():
