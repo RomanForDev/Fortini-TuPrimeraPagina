@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from myapp.forms import CrearPiedra
 from myapp.models import piedra
@@ -18,6 +18,8 @@ def crear_piedra(request):
                 descripcion=formulario.cleaned_data.get('descripcion')
                 )
             Piedra.save()
+            return redirect("listar_piedras")
+        
     return render(request, 'crear_piedra.html', {'formulario': formulario})
 
 
