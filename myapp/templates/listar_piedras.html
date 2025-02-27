@@ -12,6 +12,13 @@
         <a href={% url "listar_piedras" %}>Listar Piedras</a>
         <a href={% url "contacto" %}>Contacto</a>
     </nav>
+
+    <form action="">
+        {{formulario}}
+        <input type="submit" value="Buscar">
+    </form>
+
+
     {% if existencias %}
     <ul>
         {% for existencia in existencias %}

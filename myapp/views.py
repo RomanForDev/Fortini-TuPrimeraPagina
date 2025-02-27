@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from myapp.forms import CrearPiedra
+from myapp.forms import CrearPiedra, BuscarPiedra
 from myapp.models import piedra
 
 def inicio(request):
@@ -24,8 +24,12 @@ def crear_piedra(request):
 
 
 def listar_piedras(request):
-    existencias= piedra.objects.all()
-    return render(request, 'listar_piedras.html', {'existencias': existencias})
+    formulario= BuscarPiedra(request.GET)
+    if formulario.is_valid():
+        clase= formulario.cleaned_data.get('clase')
+        material= formulario.cleaned_data.get('material')
+        existencias= piedra.objects.filter(material__icontains=material, clase__icontains=clase)
+    return render(request, 'listar_piedras.html', {'existencias': existencias, 'formulario': formulario})
 
 def contacto(request):
     return render(request, 'contacto.html')
