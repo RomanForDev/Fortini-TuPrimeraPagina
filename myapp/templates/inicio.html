@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Bienvenid@! Coralina Piedras</title>{% endblock title %}
+    {% block title_head %}<title>Bienvenid@! Coralina Piedras</title>{% endblock title_head %}
 </head>
 <body>
     <nav>
-        <a href={% url "inicio" %}>inicio</a>
+        <a href={% url "inicio" %}>Inicio</a>
         <a href={% url "crear_piedra" %}>Crear Piedra</a>
         <a href={% url "listar_piedras" %}>Listar Piedras</a>
         <a href={% url "contacto" %}>Contacto</a>
