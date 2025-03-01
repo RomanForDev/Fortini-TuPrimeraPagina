@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactanos!</title>
-</head>
-<body>
-    <nav>
-        <a href={% url "inicio" %}>inicio</a>
-        <a href={% url "crear_piedra" %}>Crear Piedra</a>
-        <a href={% url "listar_piedras" %}>Listar Piedras</a>
-        <a href={% url "contacto" %}>Contacto</a>
-    </nav>
+{% extends "inicio.html" %}
+
+    {% block contacto %}
     <h1>
         <center> Contactá con nosotros! </center>
         
         Email: @@@@@@@
         Número de teléfono: 11111111
     </h1>
-    
+    {% endblock contacto %}
 </body>
 </html>

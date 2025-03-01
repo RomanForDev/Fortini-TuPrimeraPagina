@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añadir</title>
-</head>
-<body>
-    <nav>
-        <a href={% url "inicio" %}>inicio</a>
-        <a href={% url "crear_piedra" %}>Crear Piedra</a>
-        <a href={% url "listar_piedras" %}>Listar Piedras</a>
-        <a href={% url "contacto" %}>Contacto</a>
-    </nav>
-    <form action="" method="POST">
+{% extends "inicio.html" %}
+
+    {% block formulario_creacion %}<form action="" method="POST">
         {% csrf_token %}
         {{formulario}}
         <input type="submit" value="Crear">
-    </form>
+    </form>{% endblock formulario_creacion %}
+    
     
 </body>
 </html>
