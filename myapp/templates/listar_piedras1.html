@@ -1,0 +1,22 @@
+{% extends "template_base.html" %}
+
+    {% block formulario_listar %}<form action="">
+    {{formulario}}
+        <input type="submit" value="Buscar">
+    </form>
+
+
+    {% if existencias %}
+    <ul>
+        {% for existencia in existencias %}
+        <li>
+            {{existencia}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    No hay existencias en depósito.
+    {% endif %}
+</body>
+{% endblock formulario_listar %}
+</html>

@@ -1,0 +1,11 @@
+{% extends "template_base.html" %}
+
+    {% block formulario_creacion %}<form action="" method="POST">
+        {% csrf_token %}
+        {{formulario}}
+        <input type="submit" value="Crear">
+    </form>{% endblock formulario_creacion %}
+    
+    
+</body>
+</html>
