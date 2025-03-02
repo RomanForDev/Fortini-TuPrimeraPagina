@@ -1,4 +1,4 @@
-{% extends "template_base.html" %}
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Business Casual - Start Bootstrap Theme</title>
+        <title>Contactá! Coralina Piedras</title>
         <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
@@ -18,8 +18,8 @@
     <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">A Free Bootstrap Business Theme</span>
-                <span class="site-heading-lower">Business Casual</span>
+                <span class="site-heading-upper text-primary mb-3">Bienvenido!</span>
+                <span class="site-heading-lower">Contactá con nosotros y te asesoramos.</span>
             </h1>
         </header>
         <!-- Navigation-->
@@ -29,10 +29,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Products</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Store</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "inicio" %}>Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "crear_piedra" %}>Crear Piedra</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "listar_piedras" %}>Listar Piedra</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "contacto" %}>Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,10 +43,10 @@
                     <div class="col-xl-9 mx-auto">
                         <div class="cta-inner bg-faded text-center rounded">
                             <h2 class="section-heading mb-5">
-                                <span class="section-heading-upper">Come On In</span>
-                                <span class="section-heading-lower">We're Open</span>
+                                <span class="section-heading-upper"></span>
+                                <span class="section-heading-lower">Contacto</span>
                             </h2>
-                            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                            {% comment %} <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
                                 <li class="list-unstyled-item list-hours-item d-flex">
                                     Sunday
                                     <span class="ms-auto">Closed</span>
@@ -75,25 +75,27 @@
                                     Saturday
                                     <span class="ms-auto">9:00 AM to 5:00 PM</span>
                                 </li>
-                            </ul>
+                            </ul> {% endcomment %}
                             <p class="address mb-5">
                                 <em>
-                                    <strong>1116 Orchard Street</strong>
-                                    <br />
-                                    Golden Valley, Minnesota
+                                    <strong>mail@example.com</strong>
+                                    <br>
+                                    Córdoba Capital, Córdoba, Argentina.
+                                    </br>
+                                    General Cabrera, Córdoba. Argentina.
                                 </em>
                             </p>
                             <p class="mb-0">
-                                <small><em>Call Anytime</em></small>
+                                <small><em>Teléfonos</em></small>
                                 <br />
-                                (317) 585-8468
+                                (12345678910)
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="page-section about-heading">
+        {% comment %} <section class="page-section about-heading">
             <div class="container">
                 <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="static/assets/img/about.jpg" alt="..." />
                 <div class="about-heading-content">
@@ -115,7 +117,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> {% endcomment %}
         <footer class="footer text-faded text-center py-5">
             <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
         </footer>
