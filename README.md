@@ -7,3 +7,7 @@ El proyecto contiene:
     4.- Un último apartado de contacto en el cual se pondrán las vías de comunicación con los dueños.
 
 En un futuro se planifica realizar un apartado (view) explicativo de las propiedades de cada tipo de piedra energética con imágen y descripción que sirva como información extra para el usuario sobre cada producto. También se planifica colocar una casilla de contacto que envíe un mensaje a una dirección específica y por último una opción para que el administrador pueda remover existencias del depósito en función de las ventas realizadas.
+
+datos superuser:
+    usuario: admin
+    pw: 12345
