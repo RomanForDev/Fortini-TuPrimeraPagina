@@ -1,15 +1,19 @@
-{% extends "listar_piedras.html" %}
+{% extends "template_base.html" %}
 
-{% block title_head %}Detalle{% endblock title_head %}
-
-{% block h1_header %}Detalle de {{piedra}}{% endblock h1_header %}
-
+{% block body %}{% endblock body %}
 {% block contenido %}
     <ul>
+    <h2 class="section-heading mb-4">
+        <span class="site-heading-upper text-primary mb-3">
         <li>
             Clase: {{piedra.clase}} |
+            </br>          
             Material: {{piedra.material}} |
-            Descripción: {{piedra.descripcion}} |          
+            <br>
+            Descripción: {{piedra.descripcion}} |
+            </br>          
         </li>
+        </span>
+    </h2>
     </ul>
 {% endblock contenido %}

@@ -14,7 +14,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href={% static "css/styles.css" %} rel="stylesheet" /> 
     </head>
-    <body>
+        <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
                 <span class="site-heading-upper text-primary mb-3">Bienvenido!</span>
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </nav>
-
+        {% block body %}
         <section class="page-section cta">
             <div class="container">
                 <div class="row">
@@ -52,6 +52,8 @@
                 </div>
             </div>
         </section>
+        {% endblock body %}
+        {% block contenido %}{% endblock contenido %}
         <footer class="footer text-faded text-center py-5">
             <div class="container"><p class="m-0 small">"Copyright" &copy; Coralina Piedras</p></div>
         </footer>
