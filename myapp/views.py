@@ -31,6 +31,10 @@ def listar_piedras(request):
         existencias= piedra.objects.filter(material__icontains=material, clase__icontains=clase)
     return render(request, 'listar_piedras.html', {'existencias': existencias, 'formulario': formulario})
 
+def detalle_piedra(request, id):
+    piedras= piedra.objects.get(id=id)
+    return render(request, 'detalle_piedra.html', {'piedra': piedras})
+
 def contacto(request):
     return render(request, 'contacto.html')
             
