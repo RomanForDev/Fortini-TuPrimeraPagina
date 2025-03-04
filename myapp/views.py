@@ -35,6 +35,11 @@ def detalle_piedra(request, id):
     piedras= piedra.objects.get(id=id)
     return render(request, 'detalle_piedra.html', {'piedra': piedras})
 
+def borrar_piedra(request, id):
+    piedras= piedra.objects.get(id=id)
+    piedras.delete()
+    return redirect("listar_piedras")
+
 def contacto(request):
     return render(request, 'contacto.html')
             
