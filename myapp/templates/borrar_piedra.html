@@ -1,0 +1,14 @@
+{% extends "template_base.html" %}
+
+{% block borrar %}
+<h2 class="section-heading mb-4">
+    <span class="site-heading-upper text-primary mb-3">
+    Borrar {{Piedra.clase}} {{Piedra.material}}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>¿Estás seguro de que querés borrar la piedra "{{piedra.clase}} {{piedra.material}}"?</p>
+            <input type="submit" value="Confirmar">
+        </form>
+    </span>
+</h2>
+{% endblock borrar %}

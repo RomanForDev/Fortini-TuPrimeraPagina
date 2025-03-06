@@ -11,6 +11,7 @@ class BuscarPiedra(forms.Form):
     material= forms.CharField(max_length=20, required=False)
     
 class EditarPiedraFormulario(forms.ModelForm):
+    fecha_modificación= forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     class Meta:
         model= piedra
         fields= '__all__' #est opuede ser una lista con cada elemento

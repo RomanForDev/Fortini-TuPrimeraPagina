@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from myapp.forms import CrearPiedra, BuscarPiedra, EditarPiedraFormulario
 from myapp.models import piedra
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 def inicio(request):
@@ -54,3 +54,7 @@ class EditarPiedra(UpdateView):
     #formulario, si no se pone, se debe especificar los campos que se quieren mostrar 
     #(ej: "clase", "material", "descripcion") si se pone mas de una se hace en una lista
 
+class BorrarPiedra(DeleteView):
+    model = piedra
+    template_name = "borrar_piedra.html"
+    success_url = reverse_lazy("listar_piedras")

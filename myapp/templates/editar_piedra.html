@@ -11,9 +11,11 @@
 
 {% block contenido_editar %}
 Formulario edición de Piedra
+<span class="site-heading-upper text-primary mb-3">
     <form action="" method="post">
         {% csrf_token %}
         {{form}}
         <input type="submit" value="Editar">
     </form>
+</span>
 {% endblock contenido_editar %}
