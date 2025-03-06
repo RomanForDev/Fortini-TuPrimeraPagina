@@ -53,8 +53,9 @@
                                 {% for existencia in existencias %}
                                 <li>
                                     {{existencia}} | 
-                                    <a href="{% url 'detalle_piedra' existencia.id %}">Detalle</a>
-                                    <a href="{% url 'borrar_piedra' existencia.id %}">Borrar</a>
+                                    <a href="{% url 'detalle_piedra' existencia.id %}">Detalle</a> |
+                                    <a href="{% url 'borrar_piedra' existencia.id %}">Borrar</a> |
+                                    <a href="{% url 'editar_piedra' existencia.id %}">Editar</a> |
                                 </li>
                                 {% endfor %}
                             </ul>

@@ -47,10 +47,10 @@ def contacto(request):
             
 class EditarPiedra(UpdateView):
     model = piedra
-    EditarPiedraate_name = "editar_auto.html"
-    success_url = reverse_lazy("/listar-piedra/") #las barras estan bien?
-    fields= '__all__' #esto es para que se muestren todos los campos del
+    template_name = "editar_piedra.html"
+    success_url = reverse_lazy("listar_piedras")
+    form_class=  EditarPiedraFormulario #sirve para crear un formulario personalizado, se debe importar el formulario. Sirve para hacerlo mas personalizado.
+    #fields= '__all__' #esto es para que se muestren todos los campos del
     #formulario, si no se pone, se debe especificar los campos que se quieren mostrar 
     #(ej: "clase", "material", "descripcion") si se pone mas de una se hace en una lista
-    form_class=  EditarPiedraFormulario #sirve para crear un formulario personalizado, se debe importar el formulario. Sirve para hacerlo mas personalizado.
 

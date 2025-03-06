@@ -1,5 +1,19 @@
 {% extends "template_base.html" %}
 
-{% block contenido %}
+{% comment %} {% block titulo %}
+<title>
+    Editar Piedra
+</title>
+{% block titulo %} {% endcomment %}
 
-{% endblock contenido %}
+{% block body2 %}{% endblock body2 %}
+
+
+{% block contenido_editar %}
+Formulario edición de Piedra
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Editar">
+    </form>
+{% endblock contenido_editar %}
