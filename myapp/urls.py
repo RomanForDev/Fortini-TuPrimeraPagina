@@ -8,4 +8,5 @@ urlpatterns= [
     path('contacto/', contacto, name='contacto',),
     path('detalle/<int:id>/', detalle_piedra, name='detalle_piedra'),
     path('borrar/<int:id>/', borrar_piedra, name='borrar_piedra'),
+    path('editar-piedra/<int:id>/', acavalaclase, name='editar_piedra')
 ]
