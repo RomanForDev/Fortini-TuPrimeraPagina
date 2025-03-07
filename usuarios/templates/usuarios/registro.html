@@ -1,0 +1,10 @@
+<title> Registrarse </title>
+<h1>Registro</h1>
+
+<span class="site-heading-upper text-primary mb-3">
+    <form action={%url "registro" %} method="POST">
+        {% csrf_token %}
+        {{formulario}}
+        <input type="submit" value="registrarse">
+    </form>
+</span>

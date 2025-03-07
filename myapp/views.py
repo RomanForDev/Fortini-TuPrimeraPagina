@@ -4,6 +4,7 @@ from myapp.forms import CrearPiedra, BuscarPiedra, EditarPiedraFormulario
 from myapp.models import piedra
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def inicio(request):
     return render(request, 'inicio.html')
@@ -45,7 +46,7 @@ def borrar_piedra(request, id):
 def contacto(request):
     return render(request, 'contacto.html')
             
-class EditarPiedra(UpdateView):
+class EditarPiedra(LoginRequiredMixin, UpdateView):
     model = piedra
     template_name = "editar_piedra.html"
     success_url = reverse_lazy("listar_piedras")
@@ -54,7 +55,7 @@ class EditarPiedra(UpdateView):
     #formulario, si no se pone, se debe especificar los campos que se quieren mostrar 
     #(ej: "clase", "material", "descripcion") si se pone mas de una se hace en una lista
 
-class BorrarPiedra(DeleteView):
+class BorrarPiedra(LoginRequiredMixin, DeleteView):
     model = piedra
     template_name = "borrar_piedra.html"
     success_url = reverse_lazy("listar_piedras")
