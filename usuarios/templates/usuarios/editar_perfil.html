@@ -1,0 +1,11 @@
+<title> Editar Perfil </title>
+<h1>Editar Perfil</h1>
+
+<span class="site-heading-upper text-primary mb-3">
+    <form action={%url "editar_perfil" %} method="POST">
+        {% csrf_token %}
+        {{formulario}}
+        <input type="submit" value="Confirmar Cambios">
+    </form>
+    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "inicio" %}>Volver a inicio</a></li>
+</span>
