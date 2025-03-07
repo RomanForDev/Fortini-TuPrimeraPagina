@@ -4,9 +4,10 @@ El proyecto contiene:
     1.- Una página de inicio con la presentación del comercio,
     2.- Un apartado para agregar existencias al depósito (el cual sólo será de uso del admin y guarda los datos en la base),
     3.- Un apartado en el que se va a mostrar al usuario la disponibilidad de cada producto que se ofrece (sus detalles y cantidad de existencias) y, 
-    4.- Un último apartado de contacto en el cual se pondrán las vías de comunicación con los dueños.
+    4.- Un apartado de contacto en el cual se pondrán las vías de comunicación con los dueños.
+    5.- Un apartado de registro para administrador y usuarios, con registro y login para que accedan a diferentes funciones de la página en base a sus permisos.
 
-En un futuro se planifica realizar un apartado (view) explicativo de las propiedades de cada tipo de piedra energética con imágen y descripción que sirva como información extra para el usuario sobre cada producto. También se planifica colocar una casilla de contacto que envíe un mensaje a una dirección específica y por último una opción para que el administrador pueda remover existencias del depósito en función de las ventas realizadas.
+En un futuro se planifica realizar un apartado (view) explicativo de las propiedades de cada tipo de piedra energética con imágen y descripción que sirva como información extra para el usuario sobre cada producto. También se planifica colocar una casilla de contacto que envíe un mensaje a una dirección específica.
 
 datos superuser:
     usuario: admin
