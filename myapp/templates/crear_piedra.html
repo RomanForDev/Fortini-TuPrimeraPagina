@@ -32,6 +32,18 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "crear_piedra" %}>Crear Piedra</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "listar_piedras" %}>Listar Piedras</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "contacto" %}>Contacto</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "editar_perfil" %}>{{request.user.username}}</a></li>
+                        <li class="nav-item">
+                            <form action={% url "logout" %} method= "POST">
+                                {% csrf_token %} 
+                                <input type= "submit" value= "Cerrar Sesión">
+                            </form>
+                        </li>
+                        {% else %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "login" %}>Iniciar Sesión</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "registro" %}>Registrarse</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
