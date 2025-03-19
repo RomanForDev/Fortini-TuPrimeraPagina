@@ -11,7 +11,7 @@ class NuestroUserCreationForm(UserCreationForm):
     first_name= forms.CharField(label='Nombre', max_length=30)
     last_name= forms.CharField(label='Apellido', max_length=30)
 
-    class Model:
+    class Meta:
         model= User
         fields= ['username', 'email', 'password1', 'password2', 'first_name', 'last_name']
         help_texts= {llave: '' for llave in fields}

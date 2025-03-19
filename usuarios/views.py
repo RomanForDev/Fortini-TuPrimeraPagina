@@ -15,7 +15,7 @@ def login(request):
     return render(request, 'usuarios/login.html', {'formulario': formulario}) 
 
 def perfil(request):
-    return render(request, 'usuarios/editar_perfil.html')
+    return render(request, 'usuarios/perfil.html')
 
 def registro(request):
     if request.method == 'POST':
@@ -32,7 +32,7 @@ def editar_perfil(request):
         formulario= NuestroUserChangeForm(request.POST, instance=request.user)
         if formulario.is_valid():
             formulario.save()
-            return redirect('editar_perfil')
+            return redirect('usuarios/perfil.html') #no es editar_perfil, chequear!
     else:
         formulario= NuestroUserChangeForm(instance=request.user)
-    return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})
+    return render(request, 'usuarios/perfil.html', {'formulario': formulario})

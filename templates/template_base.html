@@ -15,6 +15,8 @@
         <link href={% static "css/styles.css" %} rel="stylesheet" /> 
     </head>
         <body>
+            {% block perfil_usuario %}
+            {% endblock perfil_usuario %}
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
                 <span class="site-heading-upper text-primary mb-3">Bienvenido!</span>
@@ -33,7 +35,7 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "listar_piedras" %}>Listar Piedra</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "contacto" %}>Contacto</a></li>
                         {% if request.user.is_authenticated %}
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "editar_perfil" %}>{{request.user.username}}</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "perfil" %}>{{request.user.username}}</a></li>
                         <li class="nav-item">
                             <form action={% url "logout" %} method= "POST">
                                 {% csrf_token %} 
