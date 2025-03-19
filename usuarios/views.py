@@ -36,13 +36,11 @@ def editar_perfil(request):
     if request.method == 'POST':
         formulario= NuestroUserChangeForm(request.POST, request.FILES, instance=request.user)
         if formulario.is_valid():
-
             if formulario.cleaned_data.get('avatar'):
                 info_extra.avatar= formulario.cleaned_data.get('avatar')
-            info_extra.save()
-            
+                info_extra.save()
             formulario.save()
-            return redirect('usuarios/perfil.html') #no es editar_perfil, chequear!
+            return redirect('usuarios/login.html') #acá marca error en la redirección cuando se intenta cambiar el perfil. Rever..
     else:
         formulario= NuestroUserChangeForm(instance=request.user, initial={'avatar': info_extra.avatar})
-    return render(request, 'usuarios/perfil.html', {'formulario': formulario})
+    return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})
