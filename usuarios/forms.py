@@ -21,6 +21,7 @@ class NuestroUserChangeForm(UserChangeForm):
     password1= None
     first_name= forms.CharField(label='Nombre', max_length=30)
     last_name= forms.CharField(label='Apellido', max_length=30)
+    avatar= forms.ImageField(label='Avatar', required=False)
     class Meta:
         model= User
-        fields= ['email', 'first_name', 'last_name']
+        fields= ['email', 'first_name', 'last_name', 'avatar']

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from usuarios.forms import NuestroUserCreationForm, NuestroUserChangeForm
 from django.contrib.auth import login as do_login
+from usuarios.models import InfoExtra
+from django.contrib.auth.decorators import login_required
 
 def login(request):
     if request.method == 'POST':
@@ -9,6 +11,7 @@ def login(request):
         if formulario.is_valid():
             usuario= formulario.get_user()
             do_login(request, usuario)
+            InfoExtra.objects.get_or_create(user=usuario)
             return redirect('inicio')
     else:
         formulario= AuthenticationForm()
@@ -27,12 +30,19 @@ def registro(request):
         formulario= NuestroUserCreationForm()
     return render(request, 'usuarios/registro.html', {'formulario': formulario})
 
+@login_required
 def editar_perfil(request):
+    info_extra= request.user.infoextra
     if request.method == 'POST':
-        formulario= NuestroUserChangeForm(request.POST, instance=request.user)
+        formulario= NuestroUserChangeForm(request.POST, request.FILES, instance=request.user)
         if formulario.is_valid():
+
+            if formulario.cleaned_data.get('avatar'):
+                info_extra.avatar= formulario.cleaned_data.get('avatar')
+            info_extra.save()
+            
             formulario.save()
             return redirect('usuarios/perfil.html') #no es editar_perfil, chequear!
     else:
-        formulario= NuestroUserChangeForm(instance=request.user)
+        formulario= NuestroUserChangeForm(instance=request.user, initial={'avatar': info_extra.avatar})
     return render(request, 'usuarios/perfil.html', {'formulario': formulario})

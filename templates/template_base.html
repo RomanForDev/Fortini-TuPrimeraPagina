@@ -35,7 +35,11 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "listar_piedras" %}>Listar Piedra</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "contacto" %}>Contacto</a></li>
                         {% if request.user.is_authenticated %}
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "perfil" %}>{{request.user.username}}</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "perfil" %}>
+                            {% if request.user.infoextra.avatar %}
+                            <img scr= {{request.user.infoextra.avatar.url}} alt="Imagen de Perfil" height="40" width="40">  
+                            {% endif %}
+                            {{request.user.username}}</a></li>
                         <li class="nav-item">
                             <form action={% url "logout" %} method= "POST">
                                 {% csrf_token %} 
