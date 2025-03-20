@@ -1,5 +1,8 @@
+{% extends "template_base.html" %}
+
+{% block editar_perfil %}
 <title> Editar Perfil </title>
-<h1>Editar Perfil</h1>
+<h1 class="site-heading-upper text-primary mb-3">Editar Perfil</h1>
 
 <span class="site-heading-upper text-primary mb-3">
     <form action={%url "editar_perfil" %} method="POST" enctype="multipart/form-data">
@@ -9,3 +12,4 @@
     </form>
     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url "inicio" %}>Volver a inicio</a></li>
 </span>
+{% endblock editar_perfil %}

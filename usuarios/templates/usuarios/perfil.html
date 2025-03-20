@@ -1,7 +1,12 @@
-<p>Bienvenido jefe!</p>
+{% extends "template_base.html" %}
+
+{% block perfil %}
+
+<p class="site-heading-upper text-primary mb-3">Bienvenido jefe!</p>
 
 <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
 
+{% endblock perfil %}
 {% comment %} <a href="{% url 'editar_perfil' %}">Editar Perfil</a> {% endcomment %}
 {% comment %} {% block contenido %}
     <h1>Perfil de Usuario</h1>

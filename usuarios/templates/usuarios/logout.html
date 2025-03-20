@@ -1,5 +1,11 @@
+{% extends "template_base.html" %}
+
+{% block logout %}
+
 <title> Logout </title>
 
-<h1>Te deslogueaste correctamente!</h1>
-<p>Gracias por visitarnos, te esperamos pronto!</p>
+<h1 class="site-heading-upper text-primary mb-3">Te deslogueaste correctamente!</h1>
+<p class="site-heading-upper text-primary mb-3">Gracias por visitarnos, te esperamos pronto!</p>
 <button><a href="{% url 'inicio' %}">Volver al inicio</a></button>
+
+{% endblock logout %}

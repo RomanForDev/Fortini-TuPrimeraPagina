@@ -40,10 +40,10 @@
                             <img scr= {{request.user.infoextra.avatar.url}} alt="Imagen de Perfil" height="40" width="40">  
                             {% endif %}
                             {{request.user.username}}</a></li>
-                        <li class="nav-item">
+                        <li class="nav-item px-lg-4">
                             <form action={% url "logout" %} method= "POST">
                                 {% csrf_token %} 
-                                <input type= "submit" value= "Cerrar Sesión">
+                                <input type = "submit" value= "Cerrar Sesión">
                             </form>
                         </li>
                         {% else %}
@@ -57,6 +57,11 @@
         {% block body %} 
         {% block body2 %}
         {% block borrar %}
+        {% block editar_perfil %}
+        {% block perfil %}
+        {% block registro %}
+        {% block login %}
+        {% block logout %}
         <section class="page-section cta">
             <div class="container">
                 <div class="row">
@@ -72,6 +77,11 @@
                 </div>
             </div>
         </section>
+        {% endblock logout %}
+        {% endblock login %}
+        {% endblock registro %}
+        {% endblock perfil %}
+        {% endblock editar_perfil %}
         {% endblock borrar %}
         {% endblock body2 %}
         {% endblock body %}

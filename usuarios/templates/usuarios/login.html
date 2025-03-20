@@ -1,5 +1,8 @@
+{% extends "template_base.html" %}
+
+{% block login %}
 <title> Login </title>
-<h1>Login</h1>
+<h1 class="site-heading-upper text-primary mb-3">Login</h1>
 
 <span class="site-heading-upper text-primary mb-3">
     <form action={%url "login" %} method="POST">
@@ -9,3 +12,5 @@
     </form>
     <button> <a class="nav-link text uppercase" href={% url "inicio" %} type="button">Volver a Inicio</button>
 </span>
+
+{% endblock login %}
