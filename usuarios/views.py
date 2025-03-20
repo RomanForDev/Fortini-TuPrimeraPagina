@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from usuarios.forms import NuestroUserCreationForm, NuestroUserChangeForm
-from django.contrib.auth import login as do_login
+from django.contrib.auth import login as django_login
 from usuarios.models import InfoExtra
 from django.contrib.auth.decorators import login_required
 
@@ -10,7 +10,7 @@ def login(request):
         formulario= AuthenticationForm(request, data=request.POST)
         if formulario.is_valid():
             usuario= formulario.get_user()
-            do_login(request, usuario)
+            django_login(request, usuario)
             InfoExtra.objects.get_or_create(user=usuario)
             return redirect('inicio')
     else:
@@ -40,7 +40,7 @@ def editar_perfil(request):
                 info_extra.avatar= formulario.cleaned_data.get('avatar')
                 info_extra.save()
             formulario.save()
-            return redirect('usuarios/login.html') #acá marca error en la redirección cuando se intenta cambiar el perfil. Rever..
+            return redirect('usuarios/perfil.html') #acá marca error en la redirección cuando se intenta cambiar el perfil. Rever..
     else:
         formulario= NuestroUserChangeForm(instance=request.user, initial={'avatar': info_extra.avatar})
     return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})

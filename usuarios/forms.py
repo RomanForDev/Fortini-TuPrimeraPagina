@@ -18,7 +18,7 @@ class NuestroUserCreationForm(UserCreationForm):
 
 class NuestroUserChangeForm(UserChangeForm):
     email= forms.EmailField(required=False)
-    password1= None
+    password= None
     first_name= forms.CharField(label='Nombre', max_length=30)
     last_name= forms.CharField(label='Apellido', max_length=30)
     avatar= forms.ImageField(label='Avatar', required=False)
