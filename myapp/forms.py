@@ -6,6 +6,7 @@ class CrearPiedra(forms.Form):
     material= forms.CharField(max_length=20)
     descripcion= forms.CharField(required=False, widget=forms.Textarea)
     imagen= forms.ImageField(label='Imagen', required=False)
+    fecha= forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
 
 class BuscarPiedra(forms.Form):
     clase= forms.CharField(max_length=20, required=False) #required False para que no exija poner algo si o si en la solicitud
