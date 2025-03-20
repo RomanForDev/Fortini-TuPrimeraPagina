@@ -18,7 +18,8 @@ def crear_piedra(request):
             Piedra= piedra(
                 clase=formulario.cleaned_data.get('clase'),
                 material=formulario.cleaned_data.get('material'),
-                descripcion=formulario.cleaned_data.get('descripcion')
+                descripcion=formulario.cleaned_data.get('descripcion'),
+                imagen=formulario.cleaned_data.get('imagen')
                 )
             Piedra.save()
             return redirect("listar_piedras")
@@ -31,7 +32,8 @@ def listar_piedras(request):
     if formulario.is_valid():
         clase= formulario.cleaned_data.get('clase')
         material= formulario.cleaned_data.get('material')
-        existencias= piedra.objects.filter(material__icontains=material, clase__icontains=clase)
+        imagen= formulario.cleaned_data.get('imagen')
+        existencias= piedra.objects.filter(material__icontains=material, clase__icontains=clase) #imagen__icontains=imagen)
     return render(request, 'listar_piedras.html', {'existencias': existencias, 'formulario': formulario})
 
 def detalle_piedra(request, id):

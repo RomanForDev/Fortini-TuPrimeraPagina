@@ -11,7 +11,11 @@
             Material: {{piedra.material}} |
             <br>
             Descripción: {{piedra.descripcion}} |
-            </br>          
+            </br>   
+            Imagen: {% if request.piedra.imagen.url %}
+            <img src="{{piedra.imagen.url}}" alt="Imagen de la Piedra" height="100" width="100"> |
+            {% endif %}
+        </br>       
         </li>
         </span>
     </h2>
