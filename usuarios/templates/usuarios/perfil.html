@@ -13,8 +13,9 @@
     </br>
     <p class="site-heading-upper text-primary mb-3">Correo Electrónico: {{request.user.email}}</p>
     <br>
-    <p class="site-heading-upper text-primary mb-3">Imagen de Perfil: {% if request.user.perfil.imagen.url %}</p>
-    <img src="{{request.user.perfil.imagen.url}}" alt="Imagen de Perfil" height="100" width="100">
+    <p class="site-heading-upper text-primary mb-3">Imagen de Perfil: </p>
+    {% if request.user.perfil.imagen.url %}
+        <img src="{{request.user.perfil.imagen.url}}" alt="Imagen de Perfil" height="100" width="100">
     {% endif %}
     <br>
 </span>
