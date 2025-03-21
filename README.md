@@ -12,3 +12,6 @@ En un futuro se planifica realizar un apartado (view) explicativo de las propied
 datos superuser:
     usuario: admin
     pw: 12345
+
+    usuario: Pepito2
+    pw pepitoelcrack123
