@@ -12,7 +12,7 @@ def inicio(request):
 def crear_piedra(request):
     formulario= CrearPiedra()
     if request.method== "POST":
-        formulario= CrearPiedra(request.POST)
+        formulario= CrearPiedra(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.cleaned_data
             Piedra= piedra(
@@ -33,7 +33,7 @@ def listar_piedras(request):
         clase= formulario.cleaned_data.get('clase')
         material= formulario.cleaned_data.get('material')
         imagen= formulario.cleaned_data.get('imagen')
-        existencias= piedra.objects.filter(material__icontains=material, clase__icontains=clase) #imagen__icontains=imagen)
+        existencias= piedra.objects.filter(material__icontains=material, clase__icontains=clase) #, imagen__icontains=imagen)
     return render(request, 'listar_piedras.html', {'existencias': existencias, 'formulario': formulario})
 
 def detalle_piedra(request, id):

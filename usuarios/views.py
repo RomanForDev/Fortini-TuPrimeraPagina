@@ -38,7 +38,7 @@ def editar_perfil(request):
         if formulario.is_valid():
             if formulario.cleaned_data.get('avatar'):
                 info_extra.avatar= formulario.cleaned_data.get('avatar')
-                info_extra.save()
+            info_extra.save()
             formulario.save()
             return redirect('perfil')
     else:
