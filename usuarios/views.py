@@ -40,7 +40,7 @@ def editar_perfil(request):
                 info_extra.avatar= formulario.cleaned_data.get('avatar')
                 info_extra.save()
             formulario.save()
-            return redirect('usuarios/perfil.html') #acá marca error en la redirección cuando se intenta cambiar el perfil. Rever..
+            return redirect('perfil')
     else:
         formulario= NuestroUserChangeForm(instance=request.user, initial={'avatar': info_extra.avatar})
     return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})

@@ -5,6 +5,7 @@ class piedra(models.Model):
     material= models.CharField(max_length=20)
     descripcion= models.TextField(null=True, blank=True)
     imagen= models.ImageField(upload_to='Imagen', null=True, blank=True)
+    # fecha= models.DateField(auto_now_add=True)
     
     def __str__(self):
         return f'{self.clase} {self.material}'

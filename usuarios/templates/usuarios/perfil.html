@@ -2,9 +2,25 @@
 
 {% block perfil %}
 
-<p class="site-heading-upper text-primary mb-3">Bienvenido jefe!</p>
+<p class="site-heading-upper text-primary mb-3">Bienvenido!</p>
+<h1 class="site-heading-upper text-primary mb-3">Perfil de Usuario</h1>
+
+    <p class="site-heading-upper text-primary mb-3">Nombre de Usuario: {{request.user.username}}</p>
+    <br>
+    <p class="site-heading-upper text-primary mb-3">Nombre: {{request.user.first_name}}</p>
+    </br>
+    <p class="site-heading-upper text-primary mb-3">Apellido: {{request.user.last_name}}</p>
+    </br>
+    <p class="site-heading-upper text-primary mb-3">Correo Electrónico: {{request.user.email}}</p>
+    <br>
+    <p class="site-heading-upper text-primary mb-3">Imagen de Perfil: {% if request.user.perfil.imagen.url %}</p>
+    <img src="{{request.user.perfil.imagen.url}}" alt="Imagen de Perfil" height="100" width="100">
+    {% endif %}
+    <br>
+</span>
 
 <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+<a href="{% url 'inicio' %}">Volver al Inicio</a>
 
 {% endblock perfil %}
 {% comment %} <a href="{% url 'editar_perfil' %}">Editar Perfil</a> {% endcomment %}
