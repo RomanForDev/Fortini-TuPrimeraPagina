@@ -7,6 +7,8 @@ El proyecto contiene:
     4.- Un apartado de contacto en el cual se pondrán las vías de comunicación con los dueños.
     5.- Un apartado de registro para administrador y usuarios, con registro y login para que accedan a diferentes funciones de la página en base a sus permisos.
 
+Resta al proyecto actualizar plantillas y css para retirar la prediseñada de Bootstrap.
+
 
 datos superuser:
     usuario: admin
